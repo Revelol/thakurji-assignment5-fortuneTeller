@@ -44,12 +44,18 @@ public class FortuneTellerFrame extends JFrame {
     private void createTopPanel()
     {
         // Top panel
+
         top = new JPanel();
-        label = new JLabel("Fortune Teller");
+        ImageIcon temp = new ImageIcon(this.getClass().getResource("fortunetellerpic.jpg"));
+        ImageIcon fortuneTeller = new ImageIcon(temp.getImage().getScaledInstance(100,100,Image.SCALE_SMOOTH));
+
+        label = new JLabel();
+        label.setIcon(fortuneTeller);
+        label.setText("Fortune Teller!");
         label.setFont(new Font("Helvetica", Font.PLAIN, 36));
-        label.setForeground(Color.black);
+        label.setForeground(Color.orange);
         top.add(label);
-        ImageIcon fortuneTeller = new ImageIcon(this.getClass().getResource("fortunetellerpic"));
+
     }
     private void createMiddlePanel()
     {
@@ -77,29 +83,31 @@ public class FortuneTellerFrame extends JFrame {
 
 
         });
-        fortuneButton.setFont(new Font("Arial", Font.PLAIN, 18));
+        fortuneButton.setFont(new Font("Arial", Font.PLAIN, 14));
+        fortuneButton.setForeground(Color.pink);
         quitBtn = new JButton("Quit");
         quitBtn.addActionListener((ActionEvent ae) -> {
             System.exit(0);
         });
-        quitBtn.setFont(new Font("Arial", Font.PLAIN, 18));
+        quitBtn.setFont(new Font("Arial", Font.PLAIN, 14));
+        quitBtn.setForeground(Color.red);
         bottom.add(fortuneButton);
         bottom.add(quitBtn);
     }
     private void generateFortune(){
        this.fortunes = new ArrayList<String>(12);
-        fortunes.add("You will ");
-        fortunes.add("fortune 1");
-        fortunes.add("fortune 2");
-        fortunes.add("fortune 3");
-        fortunes.add("fortune 4");
-        fortunes.add("fortune 5");
-        fortunes.add("fortune 6");
-        fortunes.add("fortune 7");
-        fortunes.add("fortune 8");
-        fortunes.add("fortune 9");
-        fortunes.add("fortune 10");
-        fortunes.add("fortune 11");
+        fortunes.add("You will get eaten by a bear");
+        fortunes.add("You might get robbed");
+        fortunes.add("You will be friendless");
+        fortunes.add("Tomorrow you are not gonna get dessert");
+        fortunes.add("You are gonna fail your math quiz (sorry)");
+        fortunes.add("Everyone is gonna start putting pineapples on pizza");
+        fortunes.add("You will be poor");
+        fortunes.add("There won't be a tomorrow");
+        fortunes.add("UC Tuition is gonna be raised");
+        fortunes.add("Gonna be broke because of college debt");
+        fortunes.add("Minions are coming for you");
+        fortunes.add("You gonna be homeless");
     }
 
 
