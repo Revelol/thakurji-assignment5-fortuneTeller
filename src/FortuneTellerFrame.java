@@ -38,6 +38,7 @@ public class FortuneTellerFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
+
     }
 
     private void createTopPanel()
@@ -48,6 +49,7 @@ public class FortuneTellerFrame extends JFrame {
         label.setFont(new Font("Helvetica", Font.PLAIN, 36));
         label.setForeground(Color.black);
         top.add(label);
+        ImageIcon fortuneTeller = new ImageIcon(this.getClass().getResource("fortunetellerpic"));
     }
     private void createMiddlePanel()
     {
@@ -73,11 +75,14 @@ public class FortuneTellerFrame extends JFrame {
 
             fortune.append(nextFortune);
 
+
         });
+        fortuneButton.setFont(new Font("Arial", Font.PLAIN, 18));
         quitBtn = new JButton("Quit");
         quitBtn.addActionListener((ActionEvent ae) -> {
             System.exit(0);
         });
+        quitBtn.setFont(new Font("Arial", Font.PLAIN, 18));
         bottom.add(fortuneButton);
         bottom.add(quitBtn);
     }
